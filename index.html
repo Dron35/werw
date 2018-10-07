@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+ <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8"/>
+</head>
+<a href="https://vk.com/id449074982" class="button5" data-vk>Мой вк</a>
+<body>
+<div id="th">
+<div id="wr">
+	<div id="AlY">
+		<p>Кликер уважай</p>
+		<span>Кликай на +</span>
+	</div><br>
+    <div>
+	<input type="text" id="count" value="0$" /><span id="plus"><input type="button" value="+"></span>
+    </div>
+</div>
+  <div id="buyTh">
+    <p>Купить за 10000$</p>
+	  <span>+4 клика</span>
+	  </div>
+  <div id="buyTh1">
+    <p>Купить за 50000$</p>
+	  <span>+5 кликов</span>
+	  </div>
+	   <div id="buyTh2">
+    <p>Купить за 100000$</p>
+	  <span>+10 кликов</span>
+	  </div>
+	  </div>
+<script>
+ var wrp = document.getElementById('wr');
+ var countInput = document.getElementById('count');
+ var plus = document.getElementById('plus');
+ var units = countInput.value.replace(/\d/g, '');
+ var buy = document.getElementById('buyTh');
+ var buy1 = document.getElementById('buyTh1');
+ var buy2 = document.getElementById('buyTh2');
+ plus.onclick = function() {
+	 countInput.value = parseInt(countInput.value)+1+units;
+ };
+  buy.onclick = function() {
+	   if (parseInt(countInput.value) < 10000) {
+		  alert('У вас не достатачно денег на счету!');
+		}
+	  if (parseInt(countInput.value) >= 10000) {
+		  countInput.value = parseInt(countInput.value)-10000+units;
+		   plus.onclick = function() {
+	 countInput.value = parseInt(countInput.value)+3+units;
+	   }	
+	  };
+  };
+    buy1.onclick = function() {
+	   if (parseInt(countInput.value) < 50000) {
+		  alert('У вас не достатачно денег на счету!');
+		}
+	  if (parseInt(countInput.value) >= 50000) {
+		  countInput.value = parseInt(countInput.value)-50000+units;
+		   plus.onclick = function() {
+	 countInput.value = parseInt(countInput.value)+5+units;
+	   }	
+	  };
+  };
+   buy2.onclick = function() {
+	   if (parseInt(countInput.value) < 100000) {
+		  alert('У вас не достатачно денег на счету!');
+		}
+	  if (parseInt(countInput.value) >= 100000) {
+		  countInput.value = parseInt(countInput.value)-100000+units;
+		   plus.onclick = function() {
+	 countInput.value = parseInt(countInput.value)+10+units;
+	   }	
+	  };
+  };
+</script> 
+
+</body>
+
+</html>
